@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | SWA Funeral Services</title>
+  <meta name="description" content="Learn about the mission, vision, and history of SWA Funeral Services. Dedicated to honoring lives with dignity since 2010.">
+  <meta name="keywords" content="about SWA, funeral history, our mission, Limpopo funeral services, SWA team">
+  <meta name="author" content="SWA Funeral Services">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="About SWA Funeral Services">
+  <meta property="og:description" content="Get to know SWA Funeral Services and our commitment to excellence in funeral care.">
+  <meta property="og:image" content="images/logo.png">
+  <meta property="og:url" content="https://www.swafuneralservices.co.za/about.html">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About Us | SWA Funeral Services">
+  <meta name="twitter:description" content="Our mission, values, and story as South Africa’s trusted funeral provider.">
+  <meta name="twitter:image" content="images/logo.png">
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/logo.png" type="image/png">
+  
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .hero-slide {
+            opacity: 0;
+            transform: scale(1.1);
+            transition: all 1.5s ease-in-out;
+        }
+        
+        .hero-slide.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        .text-animate {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: slideUp 1s ease-out forwards;
+        }
+        
+        .text-animate:nth-child(2) { animation-delay: 0.3s; }
+        .text-animate:nth-child(3) { animation-delay: 0.6s; }
+        .text-animate:nth-child(4) { animation-delay: 0.9s; }
+        
+        @keyframes slideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .glow-effect {
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .glow-effect:hover {
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.6);
+            transform: translateY(-2px);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #D4AF37 0%, #B8941F 100%);
+        }
+        
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .hero-overlay {
+            background: linear-gradient(45deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 100%);
+        }
+        
+        .pulse-gold {
+            animation: pulseGold 2s infinite;
+        }
+        
+        @keyframes pulseGold {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(212, 175, 55, 0); }
+        }
+        
+        .cert-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            border: 2px solid transparent;
+            transition: all 0.4s ease;
+        }
+        
+        .cert-card:hover {
+            border-color: #D4AF37;
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(212, 175, 55, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-white">
+
+    <!-- Navigation (Same as index.html) -->
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+    <img src="images/logo.png" alt="SWA Funeral Services Logo" class="mr-3" style="height: 48px; width: auto;">
+    <div class="text-2xl font-bold" style="color: #D4AF37;">
+        SWA Funeral Services
+    </div>
+</div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="index.html" class="hover:text-yellow-600 px-3 py-2 text-sm font-medium transition-colors">Home</a>
+                        <a href="#about" class="hover:text-yellow-600 px-3 py-2 text-sm font-medium transition-colors">About</a>
+                        <a href="#story" class="hover:text-yellow-600 px-3 py-2 text-sm font-medium transition-colors">Story</a>
+                        <a href="#values" class="hover:text-yellow-600 px-3 py-2 text-sm font-medium transition-colors">Values</a>
+                        <a href="#certifications" class="hover:text-yellow-600 px-3 py-2 text-sm font-medium transition-colors">Certifications</a>
+                        <a href="#gallery" class="hover:text-yellow-600 px-3 py-2 text-sm font-medium transition-colors">Gallery</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-yellow-600">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="block px-3 py-2 text-base font-medium hover:text-yellow-600">Home</a>
+                <a href="#about" class="block px-3 py-2 text-base font-medium hover:text-yellow-600">About</a>
+                <a href="#story" class="block px-3 py-2 text-base font-medium hover:text-yellow-600">Story</a>
+                <a href="#values" class="block px-3 py-2 text-base font-medium hover:text-yellow-600">Values</a>
+                <a href="#certifications" class="block px-3 py-2 text-base font-medium hover:text-yellow-600">Certifications</a>
+                <a href="#gallery" class="block px-3 py-2 text-base font-medium hover:text-yellow-600">Gallery</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-[60vh] overflow-hidden">
+        <div class="absolute inset-0">
+            <div class="hero-slide active absolute inset-0 bg-cover bg-center" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1200 800%22><rect fill=%22%23f3f4f6%22 width=%221200%22 height=%22800%22/><circle fill=%22%23d1d5db%22 cx=%22600%22 cy=%22400%22 r=%22200%22/><text x=%22600%22 y=%22420%22 text-anchor=%22middle%22 fill=%22%23374151%22 font-size=%2248%22 font-family=%22Arial%22>About SWA</text></svg>');"></div>
+        </div>
+        <div class="hero-overlay absolute inset-0"></div>
+        
+        <div class="relative z-10 h-full flex items-center justify-center">
+            <div class="text-center text-white px-4 max-w-4xl">
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-animate">
+                    About <span style="color: #D4AF37;" class="floating">SWA Funeral Services</span>
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 opacity-90 text-animate">
+                    Compassionate care and dignified funeral services across Limpopo since 2010
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+<section id="story" class="py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      
+      <!-- Text Content -->
+      <div class="fade-in">
+        <div class="inline-flex items-center px-4 py-2 bg-yellow-100 rounded-full mb-6">
+          <i class="fas fa-calendar-alt text-yellow-600 mr-2"></i>
+          <span class="text-yellow-800 font-semibold text-sm">SINCE 2010</span>
+        </div>
+        
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          Our <span style="color: #D4AF37;">Story</span>
+        </h2>
+        
+        <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+          Since our founding in 2010, SWA Funeral Services has supported more than 5,000 families in their time of need. Built on the foundation of respect, care, and tradition, we have become a trusted name in Limpopo.
+        </p>
+        
+        <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+          With multiple branches and 24/7 emergency support, we are always ready to serve with integrity and compassion.
+        </p>
+        
+        <!-- Stats -->
+        <div class="grid grid-cols-3 gap-6">
+          <div class="text-center">
+            <div class="text-3xl font-bold" style="color: #D4AF37;">14+</div>
+            <div class="text-sm text-gray-600">Years of Service</div>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl font-bold" style="color: #D4AF37;">5,000+</div>
+            <div class="text-sm text-gray-600">Families Served</div>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl font-bold" style="color: #D4AF37;">6</div>
+            <div class="text-sm text-gray-600">Branches</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Team Photo -->
+      <div class="fade-in relative">
+        <div class="overflow-hidden rounded-2xl shadow-lg">
+          <img 
+            src="images/about.jpg" 
+            alt="Our Dedicated Team" 
+            class="w-full h-auto object-contain"
+          />
+        </div>
+        <div class="absolute bottom-4 right-4 bg-white p-4 rounded-lg shadow-lg">
+          <p class="text-sm font-semibold text-gray-700">Professional Staff</p>
+          <p class="text-xs text-gray-600">Licensed & Certified</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+    <!-- Core Values Section -->
+    <section id="values" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                    Our <span style="color: #D4AF37;">Core Values</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    The principles that guide every service we provide
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="card-hover bg-gray-50 p-8 rounded-2xl text-center fade-in">
+                    <div class="w-20 h-20 gradient-bg rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-heart text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Compassion</h3>
+                    <p class="text-gray-600">We treat every family with the highest level of care and empathy, understanding that each loss is unique and deeply personal.</p>
+                </div>
+                
+                <div class="card-hover bg-gray-50 p-8 rounded-2xl text-center fade-in">
+                    <div class="w-20 h-20 gradient-bg rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-shield-alt text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Integrity</h3>
+                    <p class="text-gray-600">We uphold honesty and professionalism in every service, ensuring transparent pricing and honest communication at every step.</p>
+                </div>
+                
+                <div class="card-hover bg-gray-50 p-8 rounded-2xl text-center fade-in">
+                    <div class="w-20 h-20 gradient-bg rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-hands-helping text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Community</h3>
+                    <p class="text-gray-600">We are deeply rooted in the communities we serve, understanding local traditions and providing culturally sensitive services.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Full Services Section -->
+<section id="services" class="py-20 bg-gray-900">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Heading -->
+    <div class="text-center mb-16 fade-in">
+      <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+        Our <span style="color: #D4AF37;">Full Services</span>
+      </h2>
+      <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+        A complete range of premium, respectful services tailored to honour every life with dignity.
+      </p>
+    </div>
+
+    <!-- Services Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      <!-- Catering & Décor -->
+      <div class="bg-gray-800 p-8 rounded-2xl shadow-lg text-white fade-in">
+        <div class="mb-6">
+          <i class="fas fa-utensils text-yellow-400 text-4xl"></i>
+        </div>
+        <h3 class="text-xl font-bold mb-3">Catering & Décor</h3>
+        <p class="text-sm text-gray-300 mb-4">
+          Custom menus, elegant table settings, flower arrangements and personalised décor that reflect the life being celebrated.
+        </p>
+        <ul class="text-sm text-gray-400 list-disc list-inside space-y-1">
+          <li>Traditional & contemporary menus</li>
+          <li>Themed floral displays</li>
+          <li>Table & venue styling</li>
+        </ul>
+      </div>
+
+      <!-- Live-streaming -->
+      <div class="bg-gray-800 p-8 rounded-2xl shadow-lg text-white fade-in">
+        <div class="mb-6">
+          <i class="fas fa-video text-blue-400 text-4xl"></i>
+        </div>
+        <h3 class="text-xl font-bold mb-3">Live-streaming</h3>
+        <p class="text-sm text-gray-300 mb-4">
+          Professional multi-camera HD streams that allow distant loved ones to be present in real time.
+        </p>
+        <ul class="text-sm text-gray-400 list-disc list-inside space-y-1">
+          <li>Private secure links</li>
+          <li>Recording & replay</li>
+          <li>Zoom integration</li>
+        </ul>
+      </div>
+
+      <!-- Photography -->
+      <div class="bg-gray-800 p-8 rounded-2xl shadow-lg text-white fade-in">
+        <div class="mb-6">
+          <i class="fas fa-camera-retro text-pink-400 text-4xl"></i>
+        </div>
+        <h3 class="text-xl font-bold mb-3">Professional Photography</h3>
+        <p class="text-sm text-gray-300 mb-4">
+          Discreet, respectful photography and video montages that capture the essence of the day.
+        </p>
+        <ul class="text-sm text-gray-400 list-disc list-inside space-y-1">
+          <li>Candid & formal shots</li>
+          <li>Memorial montage creation</li>
+          <li>High-res digital album</li>
+        </ul>
+      </div>
+
+      <!-- Sound & AV -->
+      <div class="bg-gray-800 p-8 rounded-2xl shadow-lg text-white fade-in">
+        <div class="mb-6">
+          <i class="fas fa-broadcast-tower text-teal-400 text-4xl"></i>
+        </div>
+        <h3 class="text-xl font-bold mb-3">Sound & AV Systems</h3>
+        <p class="text-sm text-gray-300 mb-4">
+          Crystal-clear audio, wireless microphones, LED screens and slideshow equipment.
+        </p>
+        <ul class="text-sm text-gray-400 list-disc list-inside space-y-1">
+          <li>Wireless mics & speakers</li>
+          <li>Projector & screen hire</li>
+          <li>On-site technicians</li>
+        </ul>
+      </div>
+
+      <!-- Unveiling Ceremonies -->
+      <div class="bg-gray-800 p-8 rounded-2xl shadow-lg text-white fade-in">
+        <div class="mb-6">
+          <i class="fas fa-monument text-red-400 text-4xl"></i>
+        </div>
+        <h3 class="text-xl font-bold mb-3">Unveiling Ceremonies</h3>
+        <p class="text-sm text-gray-300 mb-4">
+          Complete planning and execution for tombstone unveilings, anniversaries and memorial dedications.
+        </p>
+        <ul class="text-sm text-gray-400 list-disc list-inside space-y-1">
+          <li>Tombstone coordination</li>
+          <li>Pastor & speaker booking</li>
+          <li>Catering & décor included</li>
+        </ul>
+      </div>
+
+      <!-- 24/7 Personal Concierge -->
+      <div class="bg-gray-800 p-8 rounded-2xl shadow-lg text-white fade-in">
+        <div class="mb-6">
+          <i class="fas fa-user-clock text-orange-400 text-4xl"></i>
+        </div>
+        <h3 class="text-xl font-bold mb-3">24/7 Personal Concierge</h3>
+        <p class="text-sm text-gray-300 mb-4">
+          A dedicated support coordinator available around the clock for members & non-members alike.
+        </p>
+        <ul class="text-sm text-gray-400 list-disc list-inside space-y-1">
+          <li>Immediate response</li>
+          <li>Paperwork assistance</li>
+          <li>Vendor coordination</li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+    <!-- Our Work in Action Gallery -->
+<section id="gallery" class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16 fade-in">
+      <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+        Our Work in <span style="color: #D4AF37;">Action</span>
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        A glimpse into our compassionate services and the beautiful ceremonies we create
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- Memorial Service -->
+      <div class="fade-in">
+        <div class="bg-gray-200 rounded-2xl overflow-hidden shadow-lg flex flex-col">
+          <div class="h-64 w-full">
+            <img src="images/new4.jpg" alt="Memorial Service" class="w-full h-full object-contain" />
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">Dignified Ceremonies</h3>
+            <p class="text-gray-600 text-sm">Beautiful memorial services that honor the life and memory of your loved ones with dignity and respect.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Venue Setup -->
+      <div class="fade-in">
+        <div class="bg-gray-200 rounded-2xl overflow-hidden shadow-lg flex flex-col">
+          <div class="h-64 w-full">
+            <img src="images/work2.jpg" alt="Venue Setup" class="w-full h-full object-contain" />
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">Professional Arrangements</h3>
+            <p class="text-gray-600 text-sm">Complete venue setup with tents, chairs, decorations, and all necessary arrangements.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Family Support -->
+      <div class="fade-in">
+        <div class="bg-gray-200 rounded-2xl overflow-hidden shadow-lg flex flex-col">
+          <div class="h-64 w-full">
+            <img src="images/new3.jpg" alt="Family Support" class="w-full h-full object-contain" />
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">Compassionate Care</h3>
+            <p class="text-gray-600 text-sm">Providing emotional support and guidance to families during their most difficult times.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Call to Action -->
+    <section class="py-20 bg-gradient-to-r from-gray-900 to-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="fade-in">
+                <h2 class="text-4xl font-bold text-white mb-6">Ready to Learn More?</h2>
+                <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                    Discover our funeral plans and see how we can support your family when you need us most.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="index.html#plans" class="glow-effect gradient-bg text-white px-8 py-4 rounded-full font-semibold hover:shadow-lg transition-all duration-300">
+                        <i class="fas fa-list mr-2"></i>View Our Plans
+                    </a>
+                    <a href="index.html#contact" class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-black transition-all duration-300">
+                        <i class="fas fa-phone mr-2"></i>Contact Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<footer class="bg-black text-white py-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid md:grid-cols-4 gap-8">
+      <!-- Logo & Description -->
+      <div class="md:col-span-2">
+        <div class="flex items-center mb-6">
+          <img src="images/logo.png" alt="SWA Funeral Services Logo" class="h-10 mr-3">
+          <h3 class="text-2xl font-bold">SWA Funeral Services</h3>
+        </div>
+        <p class="text-gray-300 mb-6 max-w-md">
+          Providing compassionate funeral services throughout South Africa, proudly based in Limpopo. Our mission is to serve with dignity, respect, and professionalism.
+        </p>
+        <div class="flex space-x-4">
+          <a href="https://www.facebook.com/p/SWA-Funeral-61550855225483/" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-yellow-600 transition-colors">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://www.tiktok.com/@swa_funeral_services?lang=en" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-yellow-600 transition-colors">
+            <i class="fab fa-tiktok"></i>
+          </a>
+          <a href="https://www.instagram.com/_swa_funerals_/?hl=en" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-yellow-600 transition-colors">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://wa.me/27645441292" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-yellow-600 transition-colors">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h4 class="text-lg font-semibold mb-4" style="color: #D4AF37;">Quick Links</h4>
+        <ul class="space-y-2">
+          <li><a href="#home" class="text-gray-300 hover:text-white transition-colors">Home</a></li>
+          <li><a href="#about" class="text-gray-300 hover:text-white transition-colors">About Us</a></li>
+          <li><a href="#plans" class="text-gray-300 hover:text-white transition-colors">Funeral Plans</a></li>
+          <li><a href="#gallery" class="text-gray-300 hover:text-white transition-colors">Gallery</a></li>
+          <li><a href="#branches" class="text-gray-300 hover:text-white transition-colors">Branches</a></li>
+          <li><a href="#terms" class="text-gray-300 hover:text-white transition-colors">Terms</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div>
+        <h4 class="text-lg font-semibold mb-4" style="color: #D4AF37;">Contact Info</h4>
+        <div class="space-y-3">
+          <p class="text-gray-300">
+            <i class="fas fa-envelope mr-2"></i>
+            swafuneral@gmail.com
+          </p>
+          <p class="text-gray-300">
+            <i class="fas fa-phone mr-2"></i>
+            064 544 1292
+          </p>
+          <p class="text-gray-300">
+            <i class="fas fa-phone mr-2"></i>
+            064 540 3561
+          </p>
+          <p class="text-gray-300">
+            <i class="fas fa-phone mr-2"></i>
+            064 533 5019
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+   <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+  <p class="text-gray-400">
+    © 2024 SWA Funeral Services. All rights reserved. | Serving South Africa with compassion, proudly based in Limpopo.<br>
+    By <a href="https://www.valoyitech.co.za" target="_blank" class="text-blue-400 hover:underline">ValoyItech</a>
+  </p>
+</div>
+  </div>
+</footer>
+
+    <script>
+        // Same scripts as index.html
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Fade in animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('bg-white/98');
+                nav.classList.remove('bg-white/95');
+            } else {
+                nav.classList.add('bg-white/95');
+                nav.classList.remove('bg-white/98');
+            }
+        });
+    </script>
+</body>
+</html>

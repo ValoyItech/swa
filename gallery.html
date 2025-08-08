@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | SWA Funeral Services</title>
+  <meta name="description" content="View our gallery showcasing SWA Funeral Services’ ceremonies, caskets, and funeral setup across Limpopo and beyond.">
+  <meta name="keywords" content="funeral gallery, SWA funerals, funeral setup, images, Limpopo funerals">
+  <meta name="author" content="SWA Funeral Services">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Gallery | SWA Funeral Services">
+  <meta property="og:description" content="Explore images of our professional funeral services and events.">
+  <meta property="og:image" content="images/logo.png">
+  <meta property="og:url" content="https://www.swafuneralservices.co.za/gallery.html">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Gallery | SWA Funeral Services">
+  <meta name="twitter:description" content="Browse our gallery of funeral ceremonies and memorial services.">
+  <meta name="twitter:image" content="images/logo.png">
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/logo.png" type="image/png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet" />
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #D4AF37 0%, #B8941F 100%);
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .gallery-item {
+            transition: all 0.4s ease;
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.2);
+        }
+
+        .gallery-item img {
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .lightbox.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            z-index: 1001;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox-prev {
+            left: 20px;
+        }
+
+        .lightbox-next {
+            right: 20px;
+        }
+
+        .filter-btn {
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn.active {
+            background: #D4AF37;
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+    <img src="images/logo.png" alt="SWA Funeral Services Logo" class="mr-3" style="height: 48px; width: auto;">
+    <div class="text-2xl font-bold" style="color: #D4AF37;">
+        SWA Funeral Services
+    </div>
+</div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="index.html" class="hover:text-yellow-600 px-3 py-2 text-sm font-medium transition-colors">Home</a>
+                        <a href="about.html" class="hover:text-yellow-600 px-3 py-2 text-sm font-medium transition-colors">About</a>
+                        <a href="#gallery" class="hover:text-yellow-600 px-3 py-2 text-sm font-medium transition-colors">Gallery</a>
+                        <a href="index.html#plans" class="hover:text-yellow-600 px-3 py-2 text-sm font-medium transition-colors">Plans</a>
+                        <a href="index.html#branches" class="hover:text-yellow-600 px-3 py-2 text-sm font-medium transition-colors">Branches</a>
+                        <a href="index.html#contact" class="hover:text-yellow-600 px-3 py-2 text-sm font-medium transition-colors">Contact</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-yellow-600">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="block px-3 py-2 text-base font-medium hover:text-yellow-600">Home</a>
+                <a href="about.html" class="block px-3 py-2 text-base font-medium hover:text-yellow-600">About</a>
+                <a href="#gallery" class="block px-3 py-2 text-base font-medium hover:text-yellow-600">Gallery</a>
+                <a href="index.html#plans" class="block px-3 py-2 text-base font-medium hover:text-yellow-600">Plans</a>
+                <a href="index.html#branches" class="block px-3 py-2 text-base font-medium hover:text-yellow-600">Branches</a>
+                <a href="index.html#contact" class="block px-3 py-2 text-base font-medium hover:text-yellow-600">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-[60vh] overflow-hidden">
+        <div class="absolute inset-0">
+            <div class="absolute inset-0 bg-gradient-to-br from-gray-200 via-gray-300 to-gray-400 flex items-center justify-center">
+                <div class="text-center">
+                    <i class="fas fa-camera text-8xl text-gray-500 mb-4"></i>
+                    <h1 class="text-4xl md:text-6xl font-bold text-gray-700">Our Gallery</h1>
+                </div>
+            </div>
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+        
+        <div class="relative z-10 h-full flex items-center justify-center">
+            <div class="text-center text-white px-4 max-w-4xl">
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
+                    Gallery of <span style="color: #D4AF37;" class="floating">Compassion</span>
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 opacity-90">
+                    A visual journey through our dignified services and heartfelt ceremonies
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Browse Our Gallery</h2>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <button class="filter-btn active px-6 py-2 border-2 border-gray-300 rounded-full font-medium transition-all" data-filter="all">
+                        All Services
+                    </button>
+                    <button class="filter-btn px-6 py-2 border-2 border-gray-300 rounded-full font-medium transition-all" data-filter="memorial">
+                        Memorial Services
+                    </button>
+                    <button class="filter-btn px-6 py-2 border-2 border-gray-300 rounded-full font-medium transition-all" data-filter="venue">
+                        Venue Setups
+                    </button>
+                    <button class="filter-btn px-6 py-2 border-2 border-gray-300 rounded-full font-medium transition-all" data-filter="support">
+                        Family Support
+                    </button>
+                    <button class="filter-btn px-6 py-2 border-2 border-gray-300 rounded-full font-medium transition-all" data-filter="ceremony">
+                        Ceremonies
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ <section class="py-16 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl font-bold text-center text-gray-800 mb-10">Gallery</h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8" id="gallery-grid">
+
+      <!-- Image 1 -->
+      <a href="images/hero1.jpg" data-lightbox="gallery" data-title="Traditional Memorial">
+        <img src="images/hero1.jpg" alt="Traditional Memorial" class="rounded-2xl shadow-lg w-full h-auto" />
+      </a>
+
+      <!-- Image 2 -->
+      <a href="images/hero2.jpg" data-lightbox="gallery" data-title="Complete Venue Setup">
+        <img src="images/hero2.jpg" alt="Complete Venue Setup" class="rounded-2xl shadow-lg w-full h-auto" />
+      </a>
+
+      <!-- Image 3 -->
+      <a href="images/work4.jpg" data-lightbox="gallery" data-title="Compassionate Care">
+        <img src="images/work4.jpg" alt="Compassionate Care" class="rounded-2xl shadow-lg w-full h-auto" />
+      </a>
+
+      <!-- Image 4 -->
+      <a href="images/work1.jpg" data-lightbox="gallery" data-title="Candlelight Tribute">
+        <img src="images/work1.jpg" alt="Candlelight Tribute" class="rounded-2xl shadow-lg w-full h-auto" />
+      </a>
+
+      <!-- Image 5 -->
+      <a href="images/hero3.jpg" data-lightbox="gallery" data-title="Peaceful Tribute">
+        <img src="images/hero3.jpg" alt="Peaceful Tribute" class="rounded-2xl shadow-lg w-full h-auto" />
+      </a>
+
+      <!-- Image 6 -->
+      <a href="images/hero4.jpg" data-lightbox="gallery" data-title="Seating Arrangements">
+        <img src="images/hero4.jpg" alt="Seating Arrangements" class="rounded-2xl shadow-lg w-full h-auto" />
+      </a>
+
+      <!-- Image 7 -->
+      <a href="images/work2.jpg" data-lightbox="gallery" data-title="Emotional Support">
+        <img src="images/work2.jpg" alt="Emotional Support" class="rounded-2xl shadow-lg w-full h-auto" />
+      </a>
+
+      <!-- Image 8 -->
+      <a href="images/new2.jpg" data-lightbox="gallery" data-title="Grave Site Service">
+        <img src="images/new2.jpg" alt="Grave Site Service" class="rounded-2xl shadow-lg w-full h-auto" />
+      </a>
+
+      <!-- Image 9 -->
+      <a href="images/new1.jpg" data-lightbox="gallery" data-title="Religious Service">
+        <img src="images/new1.jpg" alt="Religious Service" class="rounded-2xl shadow-lg w-full h-auto" />
+      </a>
+
+      <!-- Image 10 -->
+      <a href="images/work3.jpg" data-lightbox="gallery" data-title="Outdoor Service">
+        <img src="images/work3.jpg" alt="Outdoor Service" class="rounded-2xl shadow-lg w-full h-auto" />
+      </a>
+
+      <!-- Image 11 -->
+      <a href="images/new3.jpg" data-lightbox="gallery" data-title="Community Gathering">
+        <img src="images/new3.jpg" alt="Community Gathering" class="rounded-2xl shadow-lg w-full h-auto" />
+      </a>
+
+      <!-- Image 12 -->
+      <a href="images/new4.jpg" data-lightbox="gallery" data-title="Musical Tribute">
+        <img src="images/new4.jpg" alt="Musical Tribute" class="rounded-2xl shadow-lg w-full h-auto" />
+      </a>
+
+    </div>
+  </div>
+</section>
+
+    
+<footer class="bg-black text-white py-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid md:grid-cols-4 gap-8">
+      <!-- Logo & Description -->
+      <div class="md:col-span-2">
+        <div class="flex items-center mb-6">
+          <img src="images/logo.png" alt="SWA Funeral Services Logo" class="h-10 mr-3">
+          <h3 class="text-2xl font-bold">SWA Funeral Services</h3>
+        </div>
+        <p class="text-gray-300 mb-6 max-w-md">
+          Providing compassionate funeral services throughout South Africa, proudly based in Limpopo. Our mission is to serve with dignity, respect, and professionalism.
+        </p>
+        <div class="flex space-x-4">
+          <a href="https://www.facebook.com/p/SWA-Funeral-61550855225483/" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-yellow-600 transition-colors">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://www.tiktok.com/@swa_funeral_services?lang=en" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-yellow-600 transition-colors">
+            <i class="fab fa-tiktok"></i>
+          </a>
+          <a href="https://www.instagram.com/_swa_funerals_/?hl=en" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-yellow-600 transition-colors">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://wa.me/27645441292" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-yellow-600 transition-colors">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h4 class="text-lg font-semibold mb-4" style="color: #D4AF37;">Quick Links</h4>
+        <ul class="space-y-2">
+          <li><a href="#home" class="text-gray-300 hover:text-white transition-colors">Home</a></li>
+          <li><a href="#about" class="text-gray-300 hover:text-white transition-colors">About Us</a></li>
+          <li><a href="#plans" class="text-gray-300 hover:text-white transition-colors">Funeral Plans</a></li>
+          <li><a href="#gallery" class="text-gray-300 hover:text-white transition-colors">Gallery</a></li>
+          <li><a href="#branches" class="text-gray-300 hover:text-white transition-colors">Branches</a></li>
+          <li><a href="#terms" class="text-gray-300 hover:text-white transition-colors">Terms</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div>
+        <h4 class="text-lg font-semibold mb-4" style="color: #D4AF37;">Contact Info</h4>
+        <div class="space-y-3">
+          <p class="text-gray-300">
+            <i class="fas fa-envelope mr-2"></i>
+            swafuneral@gmail.com
+          </p>
+          <p class="text-gray-300">
+            <i class="fas fa-phone mr-2"></i>
+            064 544 1292
+          </p>
+          <p class="text-gray-300">
+            <i class="fas fa-phone mr-2"></i>
+            064 540 3561
+          </p>
+          <p class="text-gray-300">
+            <i class="fas fa-phone mr-2"></i>
+            064 533 5019
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+   <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+  <p class="text-gray-400">
+    © 2024 SWA Funeral Services. All rights reserved. | Serving South Africa with compassion, proudly based in Limpopo.<br>
+    By <a href="https://www.valoyitech.co.za" target="_blank" class="text-blue-400 hover:underline">ValoyItech</a>
+  </p>
+</div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+
+    <script>
+        // Mobile menu
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Fade in animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Gallery filtering
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filter = btn.getAttribute('data-filter');
+                
+                galleryItems.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.style.display = 'block';
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'translateY(0)';
+                        }, 100);
+                    } else {
+                        item.style.opacity = '0';
+                        item.style.transform = 'translateY(30px)';
+                        setTimeout(() => {
+                            item.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+
+        // Lightbox functionality
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImage = document.getElementById('lightbox-image');
+        const lightboxClose = document.getElementById('lightbox-close');
+        const lightboxPrev = document.getElementById('lightbox-prev');
+        const lightboxNext = document.getElementById('lightbox-next');
+
+        let currentImageIndex = 0;
+        const visibleItems = () => Array.from(galleryItems).filter(item => item.style.display !== 'none');
+
+        // Open lightbox
+        galleryItems.forEach((item, index) => {
+            item.addEventListener('click', () => {
+                const visible = visibleItems();
+                currentImageIndex = visible.indexOf(item);
+                showLightbox(visible[currentImageIndex]);
+            });
+        });
+
+        function showLightbox(item) {
+            const category = item.getAttribute('data-category');
+            const icon = item.querySelector('i').className;
+            const title = item.querySelector('h3').textContent;
+            const desc = item.querySelector('p').textContent;
+
+            lightboxImage.innerHTML = `
+                <div class="text-center text-white">
+                    <div class="w-32 h-32 bg-gradient-to-br from-gray-600 to-gray-800 rounded-full flex items-center justify-center mx-auto mb-8">
+                        <i class="${icon} text-5xl"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold mb-4">${title}</h2>
+                    <p class="text-xl text-gray-300">${desc}</p>
+                    <p class="text-sm text-gray-400 mt-4">Category: ${category}</p>
+                </div>
+            `;
+            
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Close lightbox
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) closeLightbox();
+        });
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Navigation
+        lightboxPrev.addEventListener('click', () => {
+            const visible = visibleItems();
+            currentImageIndex = (currentImageIndex - 1 + visible.length) % visible.length;
+            showLightbox(visible[currentImageIndex]);
+        });
+
+        lightboxNext.addEventListener('click', () => {
+            const visible = visibleItems();
+            currentImageIndex = (currentImageIndex + 1) % visible.length;
+            showLightbox(visible[currentImageIndex]);
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('active')) return;
+            
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') lightboxPrev.click();
+            if (e.key === 'ArrowRight') lightboxNext.click();
+        });
+
+        // Navbar scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('bg-white/98');
+                nav.classList.remove('bg-white/95');
+            } else {
+                nav.classList.add('bg-white/95');
+                nav.classList.remove('bg-white/98');
+            }
+        });
+    </script>
+</body>
+</html>
