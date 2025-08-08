@@ -4,25 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery | SWA Funeral Services</title>
-  <meta name="description" content="View our gallery showcasing SWA Funeral Services’ ceremonies, caskets, and funeral setup across Limpopo and beyond.">
-  <meta name="keywords" content="funeral gallery, SWA funerals, funeral setup, images, Limpopo funerals">
-  <meta name="author" content="SWA Funeral Services">
+    <meta name="description" content="View our gallery showcasing SWA Funeral Services' ceremonies, caskets, and funeral setup across Limpopo and beyond.">
+    <meta name="keywords" content="funeral gallery, SWA funerals, funeral setup, images, Limpopo funerals">
+    <meta name="author" content="SWA Funeral Services">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Gallery | SWA Funeral Services">
-  <meta property="og:description" content="Explore images of our professional funeral services and events.">
-  <meta property="og:image" content="images/logo.png">
-  <meta property="og:url" content="https://www.swafuneralservices.co.za/gallery.html">
-  <meta property="og:type" content="website">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Gallery | SWA Funeral Services">
+    <meta property="og:description" content="Explore images of our professional funeral services and events.">
+    <meta property="og:image" content="images/logo.png">
+    <meta property="og:url" content="https://www.swafuneralservices.co.za/gallery.html">
+    <meta property="og:type" content="website">
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Gallery | SWA Funeral Services">
-  <meta name="twitter:description" content="Browse our gallery of funeral ceremonies and memorial services.">
-  <meta name="twitter:image" content="images/logo.png">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Gallery | SWA Funeral Services">
+    <meta name="twitter:description" content="Browse our gallery of funeral ceremonies and memorial services.">
+    <meta name="twitter:image" content="images/logo.png">
 
-  <!-- Favicon -->
-  <link rel="icon" href="images/logo.png" type="image/png">
+    <!-- Favicon -->
+    <link rel="icon" href="images/logo.png" type="image/png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet" />
@@ -94,6 +94,13 @@
             position: relative;
         }
 
+        .lightbox-content img {
+            max-height: 80vh;
+            max-width: 90vw;
+            border-radius: 8px;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
+        }
+
         .lightbox-close {
             position: absolute;
             top: 20px;
@@ -109,6 +116,11 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .lightbox-close:hover {
+            background: rgba(0, 0, 0, 0.8);
         }
 
         .lightbox-nav {
@@ -125,6 +137,11 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .lightbox-nav:hover {
+            background: rgba(0, 0, 0, 0.8);
         }
 
         .lightbox-prev {
@@ -135,12 +152,85 @@
             right: 20px;
         }
 
+        .lightbox-caption {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            color: white;
+            font-size: 1.2rem;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
         .filter-btn {
             transition: all 0.3s ease;
         }
 
         .filter-btn.active {
             background: #D4AF37;
+            color: white;
+        }
+        
+        .social-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .social-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .social-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+            padding: 20px;
+        }
+        
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .social-iframe {
+            border: none;
+            border-radius: 12px;
+            min-height: 400px;
+        }
+        
+        .social-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+        
+        .social-icon {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+        
+        .social-icon.facebook {
+            background: #3b5998;
+            color: white;
+        }
+        
+        .social-icon.tiktok {
+            background: #000;
             color: white;
         }
     </style>
@@ -152,11 +242,11 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex items-center">
-    <img src="images/logo.png" alt="SWA Funeral Services Logo" class="mr-3" style="height: 48px; width: auto;">
-    <div class="text-2xl font-bold" style="color: #D4AF37;">
-        SWA Funeral Services
-    </div>
-</div>
+                    <img src="images/logo.png" alt="SWA Funeral Services Logo" class="mr-3" style="height: 48px; width: auto;">
+                    <div class="text-2xl font-bold" style="color: #D4AF37;">
+                        SWA Funeral Services
+                    </div>
+                </div>
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4">
                         <a href="index.html" class="hover:text-yellow-600 px-3 py-2 text-sm font-medium transition-colors">Home</a>
@@ -164,6 +254,7 @@
                         <a href="#gallery" class="hover:text-yellow-600 px-3 py-2 text-sm font-medium transition-colors">Gallery</a>
                         <a href="index.html#plans" class="hover:text-yellow-600 px-3 py-2 text-sm font-medium transition-colors">Plans</a>
                         <a href="index.html#branches" class="hover:text-yellow-600 px-3 py-2 text-sm font-medium transition-colors">Branches</a>
+                        <a href="#social" class="hover:text-yellow-600 px-3 py-2 text-sm font-medium transition-colors">Social Media</a>
                         <a href="index.html#contact" class="hover:text-yellow-600 px-3 py-2 text-sm font-medium transition-colors">Contact</a>
                     </div>
                 </div>
@@ -182,6 +273,7 @@
                 <a href="#gallery" class="block px-3 py-2 text-base font-medium hover:text-yellow-600">Gallery</a>
                 <a href="index.html#plans" class="block px-3 py-2 text-base font-medium hover:text-yellow-600">Plans</a>
                 <a href="index.html#branches" class="block px-3 py-2 text-base font-medium hover:text-yellow-600">Branches</a>
+                <a href="#social" class="block px-3 py-2 text-base font-medium hover:text-yellow-600">Social Media</a>
                 <a href="index.html#contact" class="block px-3 py-2 text-base font-medium hover:text-yellow-600">Contact</a>
             </div>
         </div>
@@ -237,154 +329,249 @@
         </div>
     </section>
 
- <section class="py-16 bg-gray-50">
+    <!-- Gallery Section -->
+    <section class="py-16 bg-gray-50" id="gallery">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-10">Gallery</h2>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8" id="gallery-grid">
+
+                <!-- Image 1 -->
+                <div class="gallery-item" data-category="memorial">
+                    <img src="images/hero1.jpg" alt="Traditional Memorial" class="rounded-2xl shadow-lg w-full h-auto object-cover" style="height: 250px;" data-title="Traditional Memorial" />
+                </div>
+
+                <!-- Image 2 -->
+                <div class="gallery-item" data-category="venue">
+                    <img src="images/hero2.jpg" alt="Complete Venue Setup" class="rounded-2xl shadow-lg w-full h-auto object-cover" style="height: 250px;" data-title="Complete Venue Setup" />
+                </div>
+
+                <!-- Image 3 -->
+                <div class="gallery-item" data-category="support">
+                    <img src="images/work4.jpg" alt="Compassionate Care" class="rounded-2xl shadow-lg w-full h-auto object-cover" style="height: 250px;" data-title="Compassionate Care" />
+                </div>
+
+                <!-- Image 4 -->
+                <div class="gallery-item" data-category="ceremony">
+                    <img src="images/work1.jpg" alt="Candlelight Tribute" class="rounded-2xl shadow-lg w-full h-auto object-cover" style="height: 250px;" data-title="Candlelight Tribute" />
+                </div>
+
+                <!-- Image 5 -->
+                <div class="gallery-item" data-category="memorial">
+                    <img src="images/hero3.jpg" alt="Peaceful Tribute" class="rounded-2xl shadow-lg w-full h-auto object-cover" style="height: 250px;" data-title="Peaceful Tribute" />
+                </div>
+
+                <!-- Image 6 -->
+                <div class="gallery-item" data-category="venue">
+                    <img src="images/hero4.jpg" alt="Seating Arrangements" class="rounded-2xl shadow-lg w-full h-auto object-cover" style="height: 250px;" data-title="Seating Arrangements" />
+                </div>
+
+                <!-- Image 7 -->
+                <div class="gallery-item" data-category="support">
+                    <img src="images/work2.jpg" alt="Emotional Support" class="rounded-2xl shadow-lg w-full h-auto object-cover" style="height: 250px;" data-title="Emotional Support" />
+                </div>
+
+                <!-- Image 8 -->
+                <div class="gallery-item" data-category="ceremony">
+                    <img src="images/new2.jpg" alt="Grave Site Service" class="rounded-2xl shadow-lg w-full h-auto object-cover" style="height: 250px;" data-title="Grave Site Service" />
+                </div>
+
+                <!-- Image 9 -->
+                <div class="gallery-item" data-category="memorial">
+                    <img src="images/new1.jpg" alt="Religious Service" class="rounded-2xl shadow-lg w-full h-auto object-cover" style="height: 250px;" data-title="Religious Service" />
+                </div>
+
+                <!-- Image 10 -->
+                <div class="gallery-item" data-category="venue">
+                    <img src="images/work3.jpg" alt="Outdoor Service" class="rounded-2xl shadow-lg w-full h-auto object-cover" style="height: 250px;" data-title="Outdoor Service" />
+                </div>
+
+                <!-- Image 11 -->
+                <div class="gallery-item" data-category="support">
+                    <img src="images/new3.jpg" alt="Community Gathering" class="rounded-2xl shadow-lg w-full h-auto object-cover" style="height: 250px;" data-title="Community Gathering" />
+                </div>
+
+                <!-- Image 12 -->
+                <div class="gallery-item" data-category="ceremony">
+                    <img src="images/new4.jpg" alt="Musical Tribute" class="rounded-2xl shadow-lg w-full h-auto object-cover" style="height: 250px;" data-title="Musical Tribute" />
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media Section -->
+<section class="py-16 social-section" id="social">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 class="text-3xl font-bold text-center text-gray-800 mb-10">Gallery</h2>
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold text-gray-900 mb-4">More On Social Media</h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Follow us on social media for more photos, videos, and updates about our services
+      </p>
+    </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8" id="gallery-grid">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <!-- Facebook Photos -->
+<div class="fade-in">
+  <div class="text-center mb-8">
+    <div class="social-icon facebook mx-auto">
+      <i class="fab fa-facebook-f text-3xl text-[#3b5998]"></i>
+    </div>
+    <h3 class="text-2xl font-bold text-gray-800 mb-2">Facebook Photos</h3>
+    <p class="text-gray-600">View our latest photos and updates on Facebook</p>
+    <a href="https://www.facebook.com/profile.php?id=61550855225483&sk=photos" target="_blank" class="inline-block mt-4 px-6 py-3 bg-[#3b5998] text-white rounded-full font-medium hover:bg-[#2d4373] transition-colors">
+      Visit Our Facebook
+    </a>
+  </div>
 
-      <!-- Image 1 -->
-      <a href="images/hero1.jpg" data-lightbox="gallery" data-title="Traditional Memorial">
-        <img src="images/hero1.jpg" alt="Traditional Memorial" class="rounded-2xl shadow-lg w-full h-auto" />
-      </a>
+  <!-- Live Facebook Embed -->
+  <div class="bg-white rounded-2xl shadow-xl overflow-hidden flex justify-center">
+    <div class="fb-page"
+      data-href="https://www.facebook.com/p/SWA-Funeral-61550855225483/"
+      data-tabs="timeline"
+      data-width="340"
+      data-height="500"
+      data-small-header="false"
+      data-adapt-container-width="true"
+      data-hide-cover="false"
+      data-show-facepile="true">
+      <blockquote cite="https://www.facebook.com/p/SWA-Funeral-61550855225483/" class="fb-xfbml-parse-ignore">
+        <a href="https://www.facebook.com/p/SWA-Funeral-61550855225483/">SWA Funeral</a>
+      </blockquote>
+    </div>
+  </div>
+</div>
 
-      <!-- Image 2 -->
-      <a href="images/hero2.jpg" data-lightbox="gallery" data-title="Complete Venue Setup">
-        <img src="images/hero2.jpg" alt="Complete Venue Setup" class="rounded-2xl shadow-lg w-full h-auto" />
-      </a>
 
-      <!-- Image 3 -->
-      <a href="images/work4.jpg" data-lightbox="gallery" data-title="Compassionate Care">
-        <img src="images/work4.jpg" alt="Compassionate Care" class="rounded-2xl shadow-lg w-full h-auto" />
-      </a>
+      <!-- TikTok Videos -->
+      <div class="fade-in">
+        <div class="text-center mb-8">
+          <div class="social-icon tiktok mx-auto">
+            <i class="fab fa-tiktok text-3xl text-black"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-800 mb-2">TikTok Videos</h3>
+          <p class="text-gray-600">Watch our latest videos and behind-the-scenes content</p>
+          <a href="https://www.tiktok.com/@swa_funeral_services" target="_blank" class="inline-block mt-4 px-6 py-3 bg-black text-white rounded-full font-medium hover:bg-gray-800 transition-colors">
+            Visit Our TikTok
+          </a>
+        </div>
 
-      <!-- Image 4 -->
-      <a href="images/work1.jpg" data-lightbox="gallery" data-title="Candlelight Tribute">
-        <img src="images/work1.jpg" alt="Candlelight Tribute" class="rounded-2xl shadow-lg w-full h-auto" />
-      </a>
-
-      <!-- Image 5 -->
-      <a href="images/hero3.jpg" data-lightbox="gallery" data-title="Peaceful Tribute">
-        <img src="images/hero3.jpg" alt="Peaceful Tribute" class="rounded-2xl shadow-lg w-full h-auto" />
-      </a>
-
-      <!-- Image 6 -->
-      <a href="images/hero4.jpg" data-lightbox="gallery" data-title="Seating Arrangements">
-        <img src="images/hero4.jpg" alt="Seating Arrangements" class="rounded-2xl shadow-lg w-full h-auto" />
-      </a>
-
-      <!-- Image 7 -->
-      <a href="images/work2.jpg" data-lightbox="gallery" data-title="Emotional Support">
-        <img src="images/work2.jpg" alt="Emotional Support" class="rounded-2xl shadow-lg w-full h-auto" />
-      </a>
-
-      <!-- Image 8 -->
-      <a href="images/new2.jpg" data-lightbox="gallery" data-title="Grave Site Service">
-        <img src="images/new2.jpg" alt="Grave Site Service" class="rounded-2xl shadow-lg w-full h-auto" />
-      </a>
-
-      <!-- Image 9 -->
-      <a href="images/new1.jpg" data-lightbox="gallery" data-title="Religious Service">
-        <img src="images/new1.jpg" alt="Religious Service" class="rounded-2xl shadow-lg w-full h-auto" />
-      </a>
-
-      <!-- Image 10 -->
-      <a href="images/work3.jpg" data-lightbox="gallery" data-title="Outdoor Service">
-        <img src="images/work3.jpg" alt="Outdoor Service" class="rounded-2xl shadow-lg w-full h-auto" />
-      </a>
-
-      <!-- Image 11 -->
-      <a href="images/new3.jpg" data-lightbox="gallery" data-title="Community Gathering">
-        <img src="images/new3.jpg" alt="Community Gathering" class="rounded-2xl shadow-lg w-full h-auto" />
-      </a>
-
-      <!-- Image 12 -->
-      <a href="images/new4.jpg" data-lightbox="gallery" data-title="Musical Tribute">
-        <img src="images/new4.jpg" alt="Musical Tribute" class="rounded-2xl shadow-lg w-full h-auto" />
-      </a>
-
+        <div class="bg-white rounded-2xl shadow-xl p-4">
+          <!-- TikTok Creator Embed -->
+          <blockquote class="tiktok-embed"
+            cite="https://www.tiktok.com/@swa_funeral_services"
+            data-unique-id="swa_funeral_services"
+            data-embed-type="creator"
+            style="max-width: 780px; min-width: 288px;">
+            <section>
+              <a target="_blank" href="https://www.tiktok.com/@swa_funeral_services?refer=creator_embed">
+                @swa_funeral_services
+              </a>
+            </section>
+          </blockquote>
+          <script async src="https://www.tiktok.com/embed.js"></script>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-    
-<footer class="bg-black text-white py-16">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid md:grid-cols-4 gap-8">
-      <!-- Logo & Description -->
-      <div class="md:col-span-2">
-        <div class="flex items-center mb-6">
-          <img src="images/logo.png" alt="SWA Funeral Services Logo" class="h-10 mr-3">
-          <h3 class="text-2xl font-bold">SWA Funeral Services</h3>
+    <!-- Fixed Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-close" id="lightbox-close">
+            <i class="fas fa-times"></i>
         </div>
-        <p class="text-gray-300 mb-6 max-w-md">
-          Providing compassionate funeral services throughout South Africa, proudly based in Limpopo. Our mission is to serve with dignity, respect, and professionalism.
-        </p>
-        <div class="flex space-x-4">
-          <a href="https://www.facebook.com/p/SWA-Funeral-61550855225483/" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-yellow-600 transition-colors">
-            <i class="fab fa-facebook-f"></i>
-          </a>
-          <a href="https://www.tiktok.com/@swa_funeral_services?lang=en" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-yellow-600 transition-colors">
-            <i class="fab fa-tiktok"></i>
-          </a>
-          <a href="https://www.instagram.com/_swa_funerals_/?hl=en" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-yellow-600 transition-colors">
-            <i class="fab fa-instagram"></i>
-          </a>
-          <a href="https://wa.me/27645441292" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-yellow-600 transition-colors">
-            <i class="fab fa-whatsapp"></i>
-          </a>
+        <div class="lightbox-nav lightbox-prev" id="lightbox-prev">
+            <i class="fas fa-chevron-left"></i>
         </div>
-      </div>
-
-      <!-- Quick Links -->
-      <div>
-        <h4 class="text-lg font-semibold mb-4" style="color: #D4AF37;">Quick Links</h4>
-        <ul class="space-y-2">
-          <li><a href="#home" class="text-gray-300 hover:text-white transition-colors">Home</a></li>
-          <li><a href="#about" class="text-gray-300 hover:text-white transition-colors">About Us</a></li>
-          <li><a href="#plans" class="text-gray-300 hover:text-white transition-colors">Funeral Plans</a></li>
-          <li><a href="#gallery" class="text-gray-300 hover:text-white transition-colors">Gallery</a></li>
-          <li><a href="#branches" class="text-gray-300 hover:text-white transition-colors">Branches</a></li>
-          <li><a href="#terms" class="text-gray-300 hover:text-white transition-colors">Terms</a></li>
-        </ul>
-      </div>
-
-      <!-- Contact Info -->
-      <div>
-        <h4 class="text-lg font-semibold mb-4" style="color: #D4AF37;">Contact Info</h4>
-        <div class="space-y-3">
-          <p class="text-gray-300">
-            <i class="fas fa-envelope mr-2"></i>
-            swafuneral@gmail.com
-          </p>
-          <p class="text-gray-300">
-            <i class="fas fa-phone mr-2"></i>
-            064 544 1292
-          </p>
-          <p class="text-gray-300">
-            <i class="fas fa-phone mr-2"></i>
-            064 540 3561
-          </p>
-          <p class="text-gray-300">
-            <i class="fas fa-phone mr-2"></i>
-            064 533 5019
-          </p>
+        <div class="lightbox-nav lightbox-next" id="lightbox-next">
+            <i class="fas fa-chevron-right"></i>
         </div>
-      </div>
+        <div class="lightbox-content" id="lightbox-content">
+            <!-- Image will be inserted here -->
+        </div>
+        <div class="lightbox-caption" id="lightbox-caption">
+            <!-- Caption will be inserted here -->
+        </div>
     </div>
+    
+    <!-- Footer -->
+    <footer class="bg-black text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Logo & Description -->
+                <div class="md:col-span-2">
+                    <div class="flex items-center mb-6">
+                        <img src="images/logo.png" alt="SWA Funeral Services Logo" class="h-10 mr-3">
+                        <h3 class="text-2xl font-bold">SWA Funeral Services</h3>
+                    </div>
+                    <p class="text-gray-300 mb-6 max-w-md">
+                        Providing compassionate funeral services throughout South Africa, proudly based in Limpopo. Our mission is to serve with dignity, respect, and professionalism.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/p/SWA-Funeral-61550855225483/" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-yellow-600 transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@swa_funeral_services?lang=en" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-yellow-600 transition-colors">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="https://www.instagram.com/_swa_funerals_/?hl=en" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-yellow-600 transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/27645441292" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-yellow-600 transition-colors">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
 
-    <!-- Footer Bottom -->
-   <div class="border-t border-gray-800 mt-12 pt-8 text-center">
-  <p class="text-gray-400">
-    © 2024 SWA Funeral Services. All rights reserved. | Serving South Africa with compassion, proudly based in Limpopo.<br>
-    By <a href="https://www.valoyitech.co.za" target="_blank" class="text-blue-400 hover:underline">ValoyItech</a>
-  </p>
-</div>
-  </div>
-</footer>
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4" style="color: #D4AF37;">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-300 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="about.html" class="text-gray-300 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="index.html#plans" class="text-gray-300 hover:text-white transition-colors">Funeral Plans</a></li>
+                        <li><a href="#gallery" class="text-gray-300 hover:text-white transition-colors">Gallery</a></li>
+                        <li><a href="#social" class="text-gray-300 hover:text-white transition-colors">Social Media</a></li>
+                        <li><a href="index.html#branches" class="text-gray-300 hover:text-white transition-colors">Branches</a></li>
+                    </ul>
+                </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4" style="color: #D4AF37;">Contact Info</h4>
+                    <div class="space-y-3">
+                        <p class="text-gray-300">
+                            <i class="fas fa-envelope mr-2"></i>
+                            swafuneral@gmail.com
+                        </p>
+                        <p class="text-gray-300">
+                            <i class="fas fa-phone mr-2"></i>
+                            064 544 1292
+                        </p>
+                        <p class="text-gray-300">
+                            <i class="fas fa-phone mr-2"></i>
+                            064 540 3561
+                        </p>
+                        <p class="text-gray-300">
+                            <i class="fas fa-phone mr-2"></i>
+                            064 533 5019
+                        </p>
+                    </div>
+                </div>
+            </div>
 
+            <!-- Footer Bottom -->
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p class="text-gray-400">
+                    © 2024 SWA Funeral Services. All rights reserved. | Serving South Africa with compassion, proudly based in Limpopo.<br>
+                    By <a href="https://www.valoyitech.co.za" target="_blank" class="text-blue-400 hover:underline">ValoyItech</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
     <script>
         // Mobile menu
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
@@ -454,77 +641,89 @@
             });
         });
 
-        // Lightbox functionality
+        // Fixed Lightbox functionality
         const lightbox = document.getElementById('lightbox');
-        const lightboxImage = document.getElementById('lightbox-image');
+        const lightboxContent = document.getElementById('lightbox-content');
+        const lightboxCaption = document.getElementById('lightbox-caption');
         const lightboxClose = document.getElementById('lightbox-close');
         const lightboxPrev = document.getElementById('lightbox-prev');
         const lightboxNext = document.getElementById('lightbox-next');
-
+        
         let currentImageIndex = 0;
-        const visibleItems = () => Array.from(galleryItems).filter(item => item.style.display !== 'none');
+        let galleryImages = [];
+
+        // Initialize gallery images
+        function initGallery() {
+            galleryImages = Array.from(document.querySelectorAll('.gallery-item img'));
+        }
 
         // Open lightbox
-        galleryItems.forEach((item, index) => {
-            item.addEventListener('click', () => {
-                const visible = visibleItems();
-                currentImageIndex = visible.indexOf(item);
-                showLightbox(visible[currentImageIndex]);
-            });
-        });
-
-        function showLightbox(item) {
-            const category = item.getAttribute('data-category');
-            const icon = item.querySelector('i').className;
-            const title = item.querySelector('h3').textContent;
-            const desc = item.querySelector('p').textContent;
-
-            lightboxImage.innerHTML = `
-                <div class="text-center text-white">
-                    <div class="w-32 h-32 bg-gradient-to-br from-gray-600 to-gray-800 rounded-full flex items-center justify-center mx-auto mb-8">
-                        <i class="${icon} text-5xl"></i>
-                    </div>
-                    <h2 class="text-3xl font-bold mb-4">${title}</h2>
-                    <p class="text-xl text-gray-300">${desc}</p>
-                    <p class="text-sm text-gray-400 mt-4">Category: ${category}</p>
-                </div>
-            `;
-            
+        function openLightbox(index) {
+            currentImageIndex = index;
+            updateLightbox();
             lightbox.classList.add('active');
             document.body.style.overflow = 'hidden';
         }
 
-        // Close lightbox
-        lightboxClose.addEventListener('click', closeLightbox);
-        lightbox.addEventListener('click', (e) => {
-            if (e.target === lightbox) closeLightbox();
-        });
+        // Update lightbox content
+        function updateLightbox() {
+            const img = galleryImages[currentImageIndex];
+            const imgSrc = img.src;
+            const imgAlt = img.alt;
+            const imgTitle = img.dataset.title || imgAlt;
+            
+            lightboxContent.innerHTML = `<img src="${imgSrc}" alt="${imgAlt}" />`;
+            lightboxCaption.textContent = imgTitle;
+        }
 
+        // Close lightbox
         function closeLightbox() {
             lightbox.classList.remove('active');
             document.body.style.overflow = 'auto';
         }
 
-        // Navigation
-        lightboxPrev.addEventListener('click', () => {
-            const visible = visibleItems();
-            currentImageIndex = (currentImageIndex - 1 + visible.length) % visible.length;
-            showLightbox(visible[currentImageIndex]);
+        // Navigate to next image
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+            updateLightbox();
+        }
+
+        // Navigate to previous image
+        function prevImage() {
+            currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+            updateLightbox();
+        }
+
+        // Initialize gallery
+        initGallery();
+
+        // Add click events to gallery items
+        galleryItems.forEach((item, index) => {
+            const img = item.querySelector('img');
+            img.addEventListener('click', () => {
+                openLightbox(index);
+            });
         });
 
-        lightboxNext.addEventListener('click', () => {
-            const visible = visibleItems();
-            currentImageIndex = (currentImageIndex + 1) % visible.length;
-            showLightbox(visible[currentImageIndex]);
-        });
+        // Lightbox controls
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightboxPrev.addEventListener('click', prevImage);
+        lightboxNext.addEventListener('click', nextImage);
 
         // Keyboard navigation
         document.addEventListener('keydown', (e) => {
-            if (!lightbox.classList.contains('active')) return;
-            
-            if (e.key === 'Escape') closeLightbox();
-            if (e.key === 'ArrowLeft') lightboxPrev.click();
-            if (e.key === 'ArrowRight') lightboxNext.click();
+            if (lightbox.classList.contains('active')) {
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowLeft') prevImage();
+                if (e.key === 'ArrowRight') nextImage();
+            }
+        });
+
+        // Close lightbox when clicking outside content
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
         });
 
         // Navbar scroll
@@ -539,5 +738,12 @@
             }
         });
     </script>
+
+    <!-- Facebook SDK -->
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous"
+  src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v23.0">
+</script>
+
 </body>
 </html>
